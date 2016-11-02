@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String path= Environment.getExternalStorageDirectory().getAbsolutePath();
+        String path= Environment.getExternalStorageDirectory().getAbsolutePath();//SDCard 위치 가져오기
         String folder=path+"/mysoobinDir";
         String filename=folder+"/mysoo.txt";
 
@@ -46,9 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.button3://파일생성
+                try {
+                    FileOutputStream fos=new FileOutputStream(filename);
+                    String str="Hello";
+                    fos.write(str.getBytes());
+                    fos.close();
+                    Toast.makeText(getApplicationContext(),"파일 생성",Toast.LENGTH_SHORT).show();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 break;
 
             case R.id.button4://파일 읽기
+
                 break;
 
             case R.id.button5://파일 목록가져오기
