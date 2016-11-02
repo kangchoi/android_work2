@@ -24,36 +24,41 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:onClick="onClick"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="폴더생성"
             android:id="@+id/button" />
 
         <Button
+            android:onClick="onClick"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="폴더삭제"
             android:id="@+id/button2"
             android:layout_gravity="center_horizontal" />
 
         <Button
+            android:onClick="onClick"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="파일생성"
             android:id="@+id/button3" />
 
         <Button
+            android:onClick="onClick"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="파일읽기"
             android:id="@+id/button4" />
     </LinearLayout>
 
     <Button
+        android:onClick="onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="파일 목록가져오기"
