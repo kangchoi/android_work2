@@ -55,17 +55,32 @@ public class MainActivity extends AppCompatActivity {
                     String str="Hello";
                     fos.write(str.getBytes());
                     fos.close();
+
                     Toast.makeText(getApplicationContext(),"파일 생성",Toast.LENGTH_SHORT).show();
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
+                    Toast.makeText(getApplicationContext(),"파일 생성 실패",Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
 
                 break;
 
             case R.id.button4://파일 읽기
+                try {
+                    FileInputStream fis=new FileInputStream(filename);
+                    byte arr[]=new byte[fis.available()];
+                    fis.read(arr);
+                    fis.close();
+
+                    Toast.makeText(getApplicationContext(),new String(arr),Toast.LENGTH_SHORT).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Toast.makeText(getApplicationContext(),"파일 읽기 실패",Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
 
                 break;
 
